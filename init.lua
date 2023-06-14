@@ -9,7 +9,7 @@ return require('packer').startup(function(use)
 
     use 'nvim-tree/nvim-tree.lua'
     use 'nvim-tree/nvim-web-devicons'
-
+    use "nvim-lua/plenary.nvim"
     vim.cmd.colorscheme "catppuccin"
 
     require("nvim-tree").setup()
@@ -19,11 +19,18 @@ return require('packer').startup(function(use)
     --[[
         setup vim mapping
     ]]
-    vim.cmd("autocmd filetype cpp nnoremap <F5> :w <bar> !g++ -std=c++14 -O2 -Wall % -o %:r && %:r.exe <CR>")
+    vim.cmd("autocmd filetype cpp nnoremap <F5> :w <bar> !g++ -std=c++17 -O2 -Wall % -o %:r && %:r.exe <CR>")
     use {"akinsho/toggleterm.nvim", tag = '*', config = function()
         require("toggleterm").setup()
     end}
+    vim.cmd("set wildmenu")
+
     vim.keymap.set('n','<C-g>',":NvimTreeToggle<CR>",{noremap=true})
+
+    vim.keymap.set('n',<C-i>,":vsp input.in<CR>" {noremap=true})
+    vim.keymap.set('n',<C-o>,":sp output.out<CR>" {noremap=true})
+
+
 end)
 
 
