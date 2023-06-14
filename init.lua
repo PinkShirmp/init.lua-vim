@@ -27,8 +27,8 @@ return require('packer').startup(function(use)
 
     vim.keymap.set('n','<C-g>',":NvimTreeToggle<CR>",{noremap=true})
 
-    vim.keymap.set('n',<C-i>,":vsp input.in<CR>" ,{noremap=true})
-    vim.keymap.set('n',<C-o>,":sp output.out<CR>" ,{noremap=true})
+    vim.keymap.set('n','<C-i>',":vsp input.in<CR>" ,{noremap=true})
+    vim.keymap.set('n','<C-o>',":sp output.out<CR>" ,{noremap=true})
 
 
 end)
